@@ -22,8 +22,8 @@ const FormPreview = (props: FormPreviewProps) => {
     <>
       <div className="simple-form-container">
         <div className="title-alignment-container">
-          <h1 className="form-title" style={{ fontSize: `${title.fontSize}px`, textAlign:`${title.alignment}`}}>{title.textContent}</h1>
-          <h2 className="form-subtitle" style={{ fontSize: `${subTitle.fontSize}px`, textAlign:`${subTitle.alignment}`}}>{subTitle.textContent}</h2>
+          <h1 className="form-title" style={{ fontSize: `${title.fontSize}px`, textAlign:`${title.alignment}`, color:`${title.fontColor}`}}>{title.textContent}</h1>
+          <h1 className="form-subtitle" style={{ fontSize: `${subTitle.fontSize}px`, textAlign:`${subTitle.alignment}`, color:`${subTitle.fontColor}`}}>{subTitle.textContent}</h1>
         </div>
           <TextInput
             textValue={"First Name"}

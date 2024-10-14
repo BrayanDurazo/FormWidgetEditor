@@ -1,0 +1,18 @@
+/* ColorPickerForm.css */
+
+.font-color-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;}
+
+input[type="color"] {
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin-left: 10px;
+    border-radius: 14px;
+}

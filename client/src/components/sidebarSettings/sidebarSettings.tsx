@@ -1,3 +1,4 @@
+import FontColorInput from "../fontColorInput/fontColorInput"
 import FontSizeInput from "../fontSizeInput/fontSizeInput"
 import { FormWidget } from "../formEditor/formEditor"
 import TextAlignmentInput from "../textAlignmentInput/textAlignmentInput"
@@ -79,6 +80,28 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
     updateFormWidget(updatedFormWidget)
   }
 
+  const setTitleFontColor = (updatedTitleFontColor: string) => {
+    const updatedFormWidget: FormWidget = {
+        ...formWidget,
+        title: {
+          ...formWidget.title,
+          fontColor: updatedTitleFontColor
+        }
+    }
+    updateFormWidget(updatedFormWidget)
+  }
+
+  const setSubTitleFontColor = (updatedSubTitleFontColor: string) => {
+    const updatedFormWidget: FormWidget = {
+        ...formWidget,
+        subTitle: {
+          ...formWidget.subTitle,
+          fontColor: updatedSubTitleFontColor
+        }
+    }
+    updateFormWidget(updatedFormWidget)
+  }
+
     return (
       <div className="sidebar-container">
         <TextInput
@@ -88,7 +111,7 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
         />
         <FontSizeInput fontSize={formWidget.title.fontSize} setFontSize={setTitleFontSize}/>
         <TextAlignmentInput textValue={"title"} alignment={formWidget.title.alignment} setAlignment={setTitleAlignment}></TextAlignmentInput>
-
+        <FontColorInput textValue={"title"} fontColor={formWidget.title.fontColor} setFontColor={setTitleFontColor}></FontColorInput>
     
         <TextInput
           textValue={"Sub title"}
@@ -97,8 +120,7 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
         />
         <FontSizeInput fontSize={formWidget.subTitle.fontSize} setFontSize={setSubTitleFontSize}/>
         <TextAlignmentInput textValue={"sub title"} alignment={formWidget.subTitle.alignment} setAlignment={setSubTitleAlignment}></TextAlignmentInput>
-
-        
+        <FontColorInput textValue={"sub title"} fontColor={formWidget.subTitle.fontColor} setFontColor={setSubTitleFontColor}></FontColorInput>
       </div>
     )
 }
