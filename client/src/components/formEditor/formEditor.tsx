@@ -32,16 +32,29 @@ export interface FormEditorProps {
 const FormEditor = (props: FormEditorProps) => {
     const { formWidget, updateFormWidget} = props
 
+    const handleSaveData = ()=> {
+        console.log("looking great")
+    }
+
     return(
-            <div className="form-editor">
-                <div className="sidebar-settings">
-                    <SidebarSettings formWidget={formWidget} updateFormWidget={updateFormWidget}/>
-                </div>
-                <div className="form-preview">
-                    <FormPreview title={formWidget.title} subTitle={formWidget.subTitle} firstNameRequired={formWidget.requiredFirstName} lastNameRequired={formWidget.requiredLastName} submitButton={formWidget.submitButton}></FormPreview>
-                </div>
+        <div className="form-editor">
+            <div className="sidebar-settings">
+                <SidebarSettings formWidget={formWidget} updateFormWidget={updateFormWidget}/>
+                <button className={"save-button"} onClick={handleSaveData}> Save </button>
             </div>
-        );
+            <div className="form-preview">
+                <FormPreview
+                    title={formWidget.title}
+                    subTitle={formWidget.subTitle}
+                    firstNameRequired={formWidget.requiredFirstName}
+                    lastNameRequired={formWidget.requiredLastName}
+                    submitButton={formWidget.submitButton}>
+                </FormPreview>
+            </div>
+            <div >
+            </div>
+        </div>
+    );
 };
 
 export default FormEditor;

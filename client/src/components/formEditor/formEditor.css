@@ -26,6 +26,19 @@
     align-items: center;
 }
 
+.save-button {
+    background-color: #3180d4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
