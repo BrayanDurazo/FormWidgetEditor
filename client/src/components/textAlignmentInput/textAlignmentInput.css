@@ -1,0 +1,41 @@
+/* TextAlignmentButtons.css */
+
+.alignment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.alignment-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.align-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.align-btn.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.align-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.alignment-text {
+    font-size: 18px;
+    color: #333;
+    transition: text-align 0.3s ease;
+}

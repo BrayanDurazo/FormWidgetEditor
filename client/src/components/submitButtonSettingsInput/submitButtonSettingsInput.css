@@ -1,0 +1,35 @@
+/* Container for the entire form input area */
+.submit-button-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Space between inputs */
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text input styling */
+.submit-button-text-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.submit-button-text-input:focus {
+    border-color: #007bff;
+}
+
+/* Label for the color picker */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
