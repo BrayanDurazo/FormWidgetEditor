@@ -5,6 +5,7 @@ import SubmitButtonSettingInput from "../submitButtonSettingsInput/submitButtonS
 
 import TextAlignmentInput from "../textAlignmentInput/textAlignmentInput"
 import TextInput from "../textInput/textInput"
+import ToggleButton from "../toggleRequiredInput/toggleRequiredInput"
 import "./sidebarSettings.css"
 
 interface SidebarSettingsProps {
@@ -127,16 +128,45 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
     updateFormWidget(updatedFormWidget)
   }
 
+  const setFirstNameRequired = (updatedRequired: boolean) => {
+  const updatedFormWidget: FormWidget = {
+      ...formWidget,
+      requiredFirstName: updatedRequired
+    }
+    updateFormWidget(updatedFormWidget)
+  }
+
+  const setLastNameRequired = (updatedRequired: boolean) => {
+  const updatedFormWidget: FormWidget = {
+      ...formWidget,
+      requiredLastName: updatedRequired
+    }
+    updateFormWidget(updatedFormWidget)
+  }
+
     return (
       <div className="sidebar-container">
-        <TextInput
-          textValue={"Title"}
-          textContent={formWidget.title.textContent}
-          setTextContent={setTitle}
-        />
-        <FontSizeInput fontSize={formWidget.title.fontSize} setFontSize={setTitleFontSize}/>
-        <TextAlignmentInput textValue={"title"} alignment={formWidget.title.alignment} setAlignment={setTitleAlignment}></TextAlignmentInput>
-        <FontColorInput textValue={"title"} fontColor={formWidget.title.fontColor} setFontColor={setTitleFontColor}></FontColorInput>
+        <div>
+          <TextInput
+            textValue={"Title"}
+            textContent={formWidget.title.textContent}
+            setTextContent={setTitle}
+          />
+          <FontSizeInput fontSize={formWidget.title.fontSize} setFontSize={setTitleFontSize}/>
+          <TextAlignmentInput textValue={"title"} alignment={formWidget.title.alignment} setAlignment={setTitleAlignment}></TextAlignmentInput>
+          <FontColorInput textValue={"title"} fontColor={formWidget.title.fontColor} setFontColor={setTitleFontColor}></FontColorInput>
+        </div>
+        <div>
+          <TextInput
+            textValue={"Sub title"}
+            textContent={formWidget.subTitle.textContent}
+            setTextContent={setSubTitle}
+          />
+          <FontSizeInput fontSize={formWidget.subTitle.fontSize} setFontSize={setSubTitleFontSize}/>
+          <TextAlignmentInput textValue={"sub title"} alignment={formWidget.subTitle.alignment} setAlignment={setSubTitleAlignment}></TextAlignmentInput>
+          <FontColorInput textValue={"sub title"} fontColor={formWidget.subTitle.fontColor} setFontColor={setSubTitleFontColor}></FontColorInput>
+        </div>
+        
     
         <TextInput
           textValue={"Sub title"}
@@ -148,6 +178,8 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
         <FontColorInput textValue={"sub title"} fontColor={formWidget.subTitle.fontColor} setFontColor={setSubTitleFontColor}></FontColorInput>
 
         <SubmitButtonSettingInput buttonText={formWidget.submitButton.textContent} setButtonTex={setSubmitButtonText} backgroundColor={formWidget.submitButton.backgroundColor} setBackgroundColor={setSubmitButtonBackgroundColor}></SubmitButtonSettingInput>
+        <ToggleButton textValue={"First name"} required={formWidget.requiredFirstName} setRequired={setFirstNameRequired}></ToggleButton>
+        <ToggleButton textValue={"Last name"} required={formWidget.requiredLastName} setRequired={setLastNameRequired}></ToggleButton>
       </div>
     )
 }
