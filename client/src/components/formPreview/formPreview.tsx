@@ -2,18 +2,19 @@ import { useState } from "react";
 import TextInput from "../textInput/textInput";
 import EmailInput from "../emailInput/emailInput";
 import "./formPreview.css";
-import { TextElement } from "../formEditor/formEditor";
+import { ButtonElement, TextElement } from "../formEditor/formEditor";
 
 interface FormPreviewProps {
   title: TextElement;
   subTitle: TextElement;
   firstNameRequired: boolean;
   lastNameRequired: boolean;
+  submitButton: ButtonElement;
 }
 
 const FormPreview = (props: FormPreviewProps) => {
   // State for form inputs
-  const { title, subTitle, firstNameRequired, lastNameRequired } = props;
+  const { title, subTitle, firstNameRequired, lastNameRequired, submitButton } = props;
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -38,7 +39,7 @@ const FormPreview = (props: FormPreviewProps) => {
             setTextContent={setLastName}
           />
           <EmailInput email={email} setEmail={setEmail} />
-        <button className="submit-button">Submit</button>
+        <button className="submit-button" style={{backgroundColor:`${submitButton.backgroundColor}`}}>{submitButton.textContent}</button>
       </div>
     </>
   );

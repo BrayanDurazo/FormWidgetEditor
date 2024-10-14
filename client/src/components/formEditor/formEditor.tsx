@@ -10,7 +10,7 @@ export interface TextElement {
   alignment: "left" | "center" | "right";
 }
 
-interface ButtonElement {
+export interface ButtonElement {
   textContent: string;
   backgroundColor: string;
 }
@@ -38,7 +38,7 @@ const FormEditor = (props: FormEditorProps) => {
                     <SidebarSettings formWidget={formWidget} updateFormWidget={updateFormWidget}/>
                 </div>
                 <div className="form-preview">
-                    <FormPreview title={formWidget.title} subTitle={formWidget.subTitle} firstNameRequired={formWidget.requiredFirstName} lastNameRequired={formWidget.requiredLastName}></FormPreview>
+                    <FormPreview title={formWidget.title} subTitle={formWidget.subTitle} firstNameRequired={formWidget.requiredFirstName} lastNameRequired={formWidget.requiredLastName} submitButton={formWidget.submitButton}></FormPreview>
                 </div>
             </div>
         );

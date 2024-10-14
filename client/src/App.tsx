@@ -17,7 +17,7 @@ const initFormWidget: FormWidget = {
     },
     submitButton: {
       textContent: "Submit",
-      backgroundColor: "#00008B",
+      backgroundColor: "#ff0000",
     },
     requiredFirstName: true,
     requiredLastName: true,

@@ -1,6 +1,8 @@
 import FontColorInput from "../fontColorInput/fontColorInput"
 import FontSizeInput from "../fontSizeInput/fontSizeInput"
 import { FormWidget } from "../formEditor/formEditor"
+import SubmitButtonSettingInput from "../submitButtonSettingsInput/submitButtonSettingsInput"
+
 import TextAlignmentInput from "../textAlignmentInput/textAlignmentInput"
 import TextInput from "../textInput/textInput"
 import "./sidebarSettings.css"
@@ -102,6 +104,29 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
     updateFormWidget(updatedFormWidget)
   }
 
+
+  const setSubmitButtonText = (updatedButtonText: string) => {
+    const updatedFormWidget: FormWidget = {
+        ...formWidget,
+        submitButton: {
+          ...formWidget.submitButton,
+          textContent: updatedButtonText
+        }
+    }
+    updateFormWidget(updatedFormWidget)
+  }
+
+  const setSubmitButtonBackgroundColor = (updatedBackgroundColor: string) => {
+    const updatedFormWidget: FormWidget = {
+        ...formWidget,
+        submitButton: {
+          ...formWidget.submitButton,
+          backgroundColor: updatedBackgroundColor
+        }
+    }
+    updateFormWidget(updatedFormWidget)
+  }
+
     return (
       <div className="sidebar-container">
         <TextInput
@@ -121,6 +146,8 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
         <FontSizeInput fontSize={formWidget.subTitle.fontSize} setFontSize={setSubTitleFontSize}/>
         <TextAlignmentInput textValue={"sub title"} alignment={formWidget.subTitle.alignment} setAlignment={setSubTitleAlignment}></TextAlignmentInput>
         <FontColorInput textValue={"sub title"} fontColor={formWidget.subTitle.fontColor} setFontColor={setSubTitleFontColor}></FontColorInput>
+
+        <SubmitButtonSettingInput buttonText={formWidget.submitButton.textContent} setButtonTex={setSubmitButtonText} backgroundColor={formWidget.submitButton.backgroundColor} setBackgroundColor={setSubmitButtonBackgroundColor}></SubmitButtonSettingInput>
       </div>
     )
 }
