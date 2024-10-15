@@ -1,12 +1,12 @@
-import "./emailInput.css"
+import './emailInput.css';
 
 interface EmailInputProps {
-  email: string,
-  setEmail: (text: string) => void
+  email: string;
+  setEmail: (text: string) => void;
 }
 
 const EmailInput = (props: EmailInputProps) => {
-  const {email, setEmail} = props
+  const { email, setEmail } = props;
 
   const handleTextInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.currentTarget.value);
@@ -15,15 +15,15 @@ const EmailInput = (props: EmailInputProps) => {
   return (
     <div className="email-group">
       <input
-          type="email"
-          id="email"
-          value={email}
-          placeholder={"Email*"}
-          onChange={(e) => handleTextInput(e)}
-          required
+        type="email"
+        id="email"
+        value={email}
+        placeholder={'Email*'}
+        onChange={(e) => handleTextInput(e)}
+        required
       />
     </div>
   );
-}
+};
 
-export default EmailInput
+export default EmailInput;

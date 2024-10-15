@@ -1,4 +1,4 @@
-import { FormWidgetModel } from "../model/formWidget";
+import { FormWidgetModel } from '../model/formWidget';
 
 export const flattenFormWidget = (widget: FormWidgetModel) => {
   return {
@@ -13,6 +13,6 @@ export const flattenFormWidget = (widget: FormWidgetModel) => {
     submitButton_textContent: widget.submitButton.textContent,
     submitButton_backgroundColor: widget.submitButton.backgroundColor,
     requiredFirstName: widget.requiredFirstName ? 1 : 0,
-    requiredLastName: widget.requiredLastName ? 1 : 0
+    requiredLastName: widget.requiredLastName ? 1 : 0,
   };
-}
+};

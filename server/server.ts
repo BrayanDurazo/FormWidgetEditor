@@ -1,8 +1,8 @@
-import app from './app'
+import app from './app';
 
-require("dotenv").config();
+require('dotenv').config();
 const port = 3000;
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`)
-})
+  console.log(`Server listening on port ${port}`);
+});

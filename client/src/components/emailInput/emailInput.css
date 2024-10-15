@@ -1,11 +1,11 @@
 .email-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .email-group input {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

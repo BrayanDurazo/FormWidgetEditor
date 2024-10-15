@@ -1,14 +1,16 @@
-import "./textAlignmentInput.css"
-interface TextAlignmentInputProps{
-    textValue: string,
-    alignment: "left" | "center" | "right",
-    setAlignment: (text: "left" | "center" | "right") => void
+import './textAlignmentInput.css';
+interface TextAlignmentInputProps {
+  textValue: string;
+  alignment: 'left' | 'center' | 'right';
+  setAlignment: (text: 'left' | 'center' | 'right') => void;
 }
 
 const TextAlignmentInput = (props: TextAlignmentInputProps) => {
-    const {textValue, alignment, setAlignment} = props
+  const { textValue, alignment, setAlignment } = props;
 
-  const handleAlignmentChange = (updatedAlignment: "left" | "center" | "right") => {
+  const handleAlignmentChange = (
+    updatedAlignment: 'left' | 'center' | 'right'
+  ) => {
     setAlignment(updatedAlignment);
   };
 
@@ -20,20 +22,20 @@ const TextAlignmentInput = (props: TextAlignmentInputProps) => {
       </div>
       <div className="alignment-buttons">
         <button
-          onClick={() => handleAlignmentChange("left")}
-          className={`align-btn ${alignment === "left" ? "active" : ""}`}
+          onClick={() => handleAlignmentChange('left')}
+          className={`align-btn ${alignment === 'left' ? 'active' : ''}`}
         >
           Left
         </button>
         <button
-          onClick={() => handleAlignmentChange("center")}
-          className={`align-btn ${alignment === "center" ? "active" : ""}`}
+          onClick={() => handleAlignmentChange('center')}
+          className={`align-btn ${alignment === 'center' ? 'active' : ''}`}
         >
           Center
         </button>
         <button
-          onClick={() => handleAlignmentChange("right")}
-          className={`align-btn ${alignment === "right" ? "active" : ""}`}
+          onClick={() => handleAlignmentChange('right')}
+          className={`align-btn ${alignment === 'right' ? 'active' : ''}`}
         >
           Right
         </button>

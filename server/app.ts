@@ -1,16 +1,19 @@
-import express, { Request, Response } from "express";
-import formWidgetRouter from './routes/formWidget.router'
+import express, { Request, Response } from 'express';
+import formWidgetRouter from './routes/formWidget.router';
 import cors from 'cors';
 
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 
-export const db = new sqlite3.Database('./formWidgetDB.db', (err: { message: any; }) => {
-  if (err) {
-    console.error(err.message);
+export const db = new sqlite3.Database(
+  './formWidgetDB.db',
+  (err: { message: any }) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log('Connected to the formWidgetDB database.');
   }
-  console.log('Connected to the formWidgetDB database.');
-});
+);
 
 const createTableSql = `
     CREATE TABLE IF NOT EXISTS FormWidget (
@@ -31,22 +34,21 @@ const createTableSql = `
         
         requiredFirstName BOOLEAN NOT NULL,
         requiredLastName BOOLEAN NOT NULL
-    );`
+    );`;
 
-db.run(createTableSql, (err: { message: string; }) => {
-    if (err) {
-        return console.error('Error creating table:', err.message);
-    }
-    console.log('Table created successfully');
+db.run(createTableSql, (err: { message: string }) => {
+  if (err) {
+    return console.error('Error creating table:', err.message);
+  }
+  console.log('Table created successfully');
 });
 
 app.use(express.json());
 app.use(cors());
 
 app.get('/', (req: Request, res: Response) => {
-    res.json({ message: "Hello, TypeScript Express!" });
+  res.json({ message: 'Hello, TypeScript Express!' });
 });
-app.use('/formWidgets', formWidgetRouter)
+app.use('/formWidgets', formWidgetRouter);
 
-
-export default app
+export default app;

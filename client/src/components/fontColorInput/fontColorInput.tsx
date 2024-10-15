@@ -1,14 +1,14 @@
-import React from "react";
-import "./fontColorInput.css"
+import React from 'react';
+import './fontColorInput.css';
 
-interface FontColorInputProps{
-    textValue: string,
-    fontColor: string,
-    setFontColor: (text: string) => void
+interface FontColorInputProps {
+  textValue: string;
+  fontColor: string;
+  setFontColor: (text: string) => void;
 }
 
 const FontColorInput = (props: FontColorInputProps) => {
-  const {textValue, fontColor, setFontColor} = props
+  const { textValue, fontColor, setFontColor } = props;
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFontColor(e.target.value);
@@ -16,13 +16,13 @@ const FontColorInput = (props: FontColorInputProps) => {
 
   return (
     <div className="font-color-input-container">
-        <label>Choose a {textValue} font color: </label>
-        <input 
-            type="color" 
-            id="colorPicker" 
-            value={fontColor} 
-            onChange={handleColorChange} 
-        />
+      <label>Choose a {textValue} font color: </label>
+      <input
+        type="color"
+        id="colorPicker"
+        value={fontColor}
+        onChange={handleColorChange}
+      />
     </div>
   );
 };
