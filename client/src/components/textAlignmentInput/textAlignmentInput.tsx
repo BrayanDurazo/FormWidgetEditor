@@ -16,7 +16,6 @@ const TextAlignmentInput = (props: TextAlignmentInputProps) => {
 
   return (
     <div className="alignment-container">
-      {/* Buttons for changing text alignment */}
       <div className="alignment-text" style={{ textAlign: alignment }}>
         Choose the {textValue} alignment:
       </div>
@@ -43,8 +42,6 @@ const TextAlignmentInput = (props: TextAlignmentInputProps) => {
           Right
         </button>
       </div>
-
-      {/* Display text with dynamic alignment */}
     </div>
   );
 };
