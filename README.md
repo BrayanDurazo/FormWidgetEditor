@@ -10,6 +10,10 @@ FormWidgetEditor is a dynamic React-based form widget editor designed to create 
 - **Expressjs**
 - **SQLite**
 
+## Prerequisites
+You’ll need to have the following installed on your machine:
+- **Node.js** You can download it from the [official website](https://nodejs.org/en/download/package-manager).
+
 ## Installation
 
 1. Clone the repository:
