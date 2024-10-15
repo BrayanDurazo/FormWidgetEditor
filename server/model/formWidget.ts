@@ -4,13 +4,13 @@ export interface FormWidgetModel {
     textContent: string;
     fontSize: number;
     fontColor: string;
-    alignment: "left" | "center" | "right";
+    alignment: 'left' | 'center' | 'right';
   };
   subTitle: {
     textContent: string;
     fontSize: number;
     fontColor: string;
-    alignment: "left" | "center" | "right";
+    alignment: 'left' | 'center' | 'right';
   };
   submitButton: {
     textContent: string;

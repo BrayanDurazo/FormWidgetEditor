@@ -9,34 +9,34 @@
 }
 
 .submit-button-text-input {
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .submit-button-input {
-    display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .submit-button-label {
-    padding-right: 8px;
-    vertical-align: middle;
-    font-size: 16px;
-    color: #000000;
-    margin-bottom: 4px;
+  padding-right: 8px;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 4px;
 }
 
-.submit-button-color-label{
-    vertical-align: middle;
-    font-size: 16px;
-    color: #000000;
-    margin-bottom: 4px;
+.submit-button-color-label {
+  vertical-align: middle;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 4px;
 }
 
 .submit-button-color-input {
-    margin-left: 5px;
+  margin-left: 5px;
 }
