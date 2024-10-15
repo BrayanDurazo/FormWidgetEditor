@@ -15,7 +15,7 @@ describe('<FontSizeInput />', () => {
     expect(screen.queryByTestId('font-size-input')).toBeTruthy();
   });
 
-  test('calls setFontSizeMock when number input clicked', async () => {
+  test('calls setFontSize when number input clicked', async () => {
     render(<FontSizeInput fontSize={fontSize} setFontSize={setFontSizeMock} />);
 
     expect(screen.queryByTestId('font-size-input')).toBeTruthy();

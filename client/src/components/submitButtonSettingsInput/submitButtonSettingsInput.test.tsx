@@ -27,7 +27,7 @@ describe('<SubmitButtonSettingInput />', () => {
     expect(screen.queryByTestId('submit-button-color-input')).toBeTruthy();
   });
 
-  test('calls setBackgroundColorMock color input clicked', async () => {
+  test('calls setBackgroundColor color input clicked', async () => {
     render(
       <SubmitButtonSettingInput
         buttonText={buttonText}
@@ -44,7 +44,7 @@ describe('<SubmitButtonSettingInput />', () => {
     expect(setBackgroundColorMock).toHaveBeenCalled();
   });
 
-  test('calls setButtonTexMock when typed on text input', async () => {
+  test('calls setButtonTex when typed on text input', async () => {
     render(
       <SubmitButtonSettingInput
         buttonText={buttonText}
