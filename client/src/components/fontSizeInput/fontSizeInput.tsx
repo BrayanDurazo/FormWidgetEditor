@@ -17,6 +17,7 @@ const FontSizeInput = (props: fontSizeInputProps) => {
       <div className="font-size-input">
         <label htmlFor="fontSizeInput">Font Size (px): </label>
         <input
+          data-testid={'font-size-input'}
           type="number"
           id="fontSizeInput"
           value={fontSize}

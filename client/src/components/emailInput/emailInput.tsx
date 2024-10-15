@@ -15,6 +15,7 @@ const EmailInput = (props: EmailInputProps) => {
   return (
     <div className="email-group">
       <input
+        data-testid={'email-input'}
         type="email"
         id="email"
         value={email}

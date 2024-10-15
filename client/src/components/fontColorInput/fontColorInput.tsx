@@ -18,6 +18,7 @@ const FontColorInput = (props: FontColorInputProps) => {
     <div className="font-color-input-container">
       <label>Choose a {textValue} font color: </label>
       <input
+        data-testid={'font-color-input'}
         type="color"
         id="colorPicker"
         value={fontColor}

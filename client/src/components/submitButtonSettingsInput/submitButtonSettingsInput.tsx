@@ -25,6 +25,7 @@ const SubmitButtonSettingInput = (props: submitButtonSettingInputProps) => {
       <div className="submit-button-input">
         <label className="submit-button-label">Submit button text:</label>
         <input
+          data-testid={'submit-button-text-input'}
           className="submit-button-text-input"
           type="text"
           id="submitButtonText"
@@ -38,6 +39,7 @@ const SubmitButtonSettingInput = (props: submitButtonSettingInputProps) => {
           Submit button background color:
         </label>
         <input
+          data-testid={'submit-button-color-input'}
           className="submit-button-color-input"
           type="color"
           id="submitButtonBackgroundColor"

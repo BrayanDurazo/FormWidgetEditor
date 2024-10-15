@@ -18,6 +18,7 @@ const TextInput = (props: TextInputProps) => {
     return (
       <div className="text-group">
         <input
+          data-testid={'test-input-' + textValue}
           type="text"
           id={textValue}
           value={textContent}
@@ -31,6 +32,7 @@ const TextInput = (props: TextInputProps) => {
     return (
       <div className="text-group">
         <input
+          data-testid={'test-input-' + textValue}
           type="text"
           id={textValue}
           value={textContent}
