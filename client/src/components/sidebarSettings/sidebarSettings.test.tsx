@@ -38,7 +38,6 @@ describe('<FormPreview />', () => {
         updateFormWidget={updateFormWidgetMock}
       />
     );
-    screen.debug();
 
     expect(screen.queryByTestId('test-input-Title')).toBeTruthy();
     expect(screen.queryByTestId('left-alignment-button-title')).toBeTruthy();
