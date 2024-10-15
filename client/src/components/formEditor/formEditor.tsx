@@ -1,6 +1,7 @@
 import SidebarSettings from "../sidebarSettings/sidebarSettings";
 import FormPreview from "../formPreview/formPreview";
 import "./formEditor.css";
+import { useState } from "react";
 
 
 export interface TextElement {
@@ -25,21 +26,40 @@ export interface FormWidget {
 }
 
 export interface FormEditorProps {
-  formWidget: FormWidget;
-  updateFormWidget: (updatedFormWidget: FormWidget) => void;
+  formWidget: FormWidget
 }
 
 const FormEditor = (props: FormEditorProps) => {
-    const { formWidget, updateFormWidget} = props
+    const {formWidget: initialFormWidget} = props
+    const [formWidget, setFormWidget] = useState(initialFormWidget)
 
     const handleSaveData = ()=> {
-        console.log("looking great")
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formWidget)
+        };
+        fetch('http://localhost:3000/formWidgets/', requestOptions)
+            .then(async response => {
+                const isJson = response.headers.get('content-type')?.includes('application/json');
+                const data = isJson && await response.json();
+                // check for error response
+                if (!response.ok) {
+                    // get error message from body or default to response status
+                    const error = (data && data.message) || response.status;
+                    return Promise.reject(error);
+                }
+                alert("Form widget added succesfully");
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
     }
 
     return(
         <div className="form-editor">
             <div className="sidebar-settings">
-                <SidebarSettings formWidget={formWidget} updateFormWidget={updateFormWidget}/>
+                <SidebarSettings formWidget={formWidget} updateFormWidget={setFormWidget}/>
                 <button className={"save-button"} onClick={handleSaveData}> Save </button>
             </div>
             <div className="form-preview">

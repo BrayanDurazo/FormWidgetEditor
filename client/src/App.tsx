@@ -1,34 +1,32 @@
-import { useState } from "react";
 import FormEditor, { FormWidget } from "./components/formEditor/formEditor";
 
-const initFormWidget: FormWidget = {
-    id: 1,
+const defaultFormWidget: FormWidget = {
+    id: 0,
     title: {
-      textContent: "Example title",
+      textContent: "",
       fontSize: 18,
-      fontColor: "#FFA500",
+      fontColor: "#000000",
       alignment: "center",
     },
     subTitle: {
-      textContent: "this is a subtitle",
-      fontSize: 12,
-      fontColor: "#008000",
-      alignment: "left",
+      textContent: "",
+      fontSize: 14,
+      fontColor: "#000000",
+      alignment: "center",
     },
     submitButton: {
       textContent: "Submit",
-      backgroundColor: "#ff0000",
+      backgroundColor: "#000000",
     },
     requiredFirstName: true,
     requiredLastName: true,
 };
 
 const App = () => {
-  const [formWidget, setFormWidget] = useState(initFormWidget)
 
   return (
     <div>
-      <FormEditor formWidget={formWidget} updateFormWidget={setFormWidget}></FormEditor>
+      <FormEditor formWidget={defaultFormWidget}></FormEditor>
     </div>
   );
 };
