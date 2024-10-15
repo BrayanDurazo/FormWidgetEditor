@@ -1,6 +1,6 @@
 # FormWidgetEditor
 
-FormWidgetEditor is a dynamic React-based form widget editor designed to create and customize forms with various settings, such as titles, subtitles, submit buttons, and more. It allows for live editing of form properties including text content, font size, font color, alignment, etc.
+FormWidgetEditor is a dynamic React-based form widget editor designed to create and customize forms with various settings, such as titles, subtitles, submit buttons, and more. It allows for live editing of form properties, including text content, font size, font color, alignment, etc.
 
 ## Technologies
 
@@ -51,11 +51,10 @@ After running the app, you can:
 2. Adjust font size, text alignment, and colors for both titles and buttons.
 3. Set fields like first name and last name as required.
 4. The form editor allows live previewing of all changes, making it easy to see the final form design before applying it to your project.
-5. You can check the different form widgets settings that have been saved in the next URL:
+5. You can check the different form widget settings that have been saved in the next URL:
 
    ```bash
    http://localhost:3000/formWidgets
-
    ```
 
 ## Test
