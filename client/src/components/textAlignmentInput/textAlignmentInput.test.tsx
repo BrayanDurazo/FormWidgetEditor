@@ -7,6 +7,11 @@ const setAlignmentInputMock = jest.fn();
 describe('<TextAlignmentInput />', () => {
   const textValue = 'title';
   const alignment = 'left';
+
+  afterEach(() => {
+    setAlignmentInputMock.mockClear();
+  });
+
   test('renders TextAlignmentInput', () => {
     render(
       <TextAlignmentInput

@@ -7,6 +7,10 @@ const setRequiredMock = jest.fn();
 describe('<ToggleButton />', () => {
   const requiredValue = true;
 
+  afterEach(() => {
+    setRequiredMock.mockClear();
+  });
+
   test('renders ToggleButton', () => {
     render(
       <ToggleButton required={requiredValue} setRequired={setRequiredMock} />

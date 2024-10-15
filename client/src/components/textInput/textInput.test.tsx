@@ -8,6 +8,10 @@ describe('<TextInput />', () => {
   const textValue = 'title';
   const textContent = 'Welcome';
   const isRequired = true;
+
+  afterEach(() => {
+    setTextContentMock.mockClear();
+  });
   test('renders TextInput', () => {
     render(
       <TextInput
