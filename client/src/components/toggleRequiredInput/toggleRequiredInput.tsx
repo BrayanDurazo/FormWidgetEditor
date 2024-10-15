@@ -17,6 +17,7 @@ const ToggleButton = (props: RequiredToggleInputProps) => {
     <button
       className={`toggle-button ${required ? 'required' : ''}`}
       onClick={handleToggle}
+      data-testid={'toggle-button-' + required}
     >
       {required ? 'On' : 'Off'}
     </button>
