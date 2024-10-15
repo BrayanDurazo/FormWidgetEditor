@@ -62,5 +62,5 @@ After running the app, you can:
 - Run the following command (make sure you are in the repository root) to launch the client side unit test.
 
   ```bash
-  npm run dev -w client
+  npm run test -w client
   ```
