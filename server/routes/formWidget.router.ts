@@ -1,5 +1,4 @@
 import {Router, Request, Response } from "express";
-import formWidgets from "../data/formWidgetData";
 import { flattenFormWidget } from "../controller/formWidgetController";
 import {db} from "../app"
 const router = Router();
@@ -71,40 +70,6 @@ router.post("/", (req: Request, res: Response) => {
 
     res.status(201).json(newFormWidget);
     return;
-});
-
-router.put('/:id', (req: Request, res: Response) => {
-    const id = parseInt(req.params.id);
-    const formWidget = formWidgets.find((formWidget) => formWidget.id === id);
-    if (!formWidget) {
-        res.status(404).send({ error: "Form widget not found" });
-        return;
-    }
-    formWidget.title.textContent = req.body.title.textContent || formWidget.title.textContent
-    formWidget.title.fontSize = req.body.title.fontSize || formWidget.title.fontSize
-    formWidget.title.fontColor = req.body.title.fontColor || formWidget.title.fontColor
-    formWidget.title.alignment = req.body.title.alignment || formWidget.title.alignment
-    formWidget.subTitle.textContent = req.body.subTitle.textContent || formWidget.subTitle.textContent
-    formWidget.subTitle.fontSize = req.body.subTitle.fontSize || formWidget.subTitle.fontSize
-    formWidget.subTitle.fontColor = req.body.subTitle.fontColor || formWidget.subTitle.fontColor
-    formWidget.subTitle.alignment = req.body.subTitle.alignment || formWidget.subTitle.alignment
-    formWidget.submitButton.textContent = req.body.submitButton.textContent || formWidget.submitButton.textContent
-    formWidget.submitButton.backgroundColor = req.body.submitButton.backgroundColor || formWidget.submitButton.backgroundColor
-    formWidget.requiredFirstName = req.body.requiredFirstName || formWidget.requiredFirstName
-    formWidget.requiredLastName = req.body.requiredLastName || formWidget.requiredLastName
-
-    res.json(formWidget);
-});
-  
-router.delete("/:id", (req: Request, res: Response) => {
-    const id = parseInt(req.params.id);
-    const index = formWidgets.findIndex((formWidget) => formWidget.id === id);
-    if (index === -1) {
-        res.status(404).json({ error: "Form widget not found" });
-        return;
-    }
-    formWidgets.splice(index, 1);
-    res.status(204).send();
 });
 
 export default router;

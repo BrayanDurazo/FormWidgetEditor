@@ -1,4 +1,3 @@
-import formWidgets from "../data/formWidgetData";
 import { FormWidgetModel } from "../model/formWidget";
 
 export const flattenFormWidget = (widget: FormWidgetModel) => {
