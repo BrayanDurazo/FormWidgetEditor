@@ -1,13 +1,12 @@
 import "./toggleRequiredInput.css";
 
 interface RequiredToggleInputProps{
-    textValue: string,
     required: boolean,
     setRequired: (updatedRequired: boolean) => void
 }
 
 const ToggleButton = (props: RequiredToggleInputProps) => {
-    const {textValue, required, setRequired} = props
+    const {required, setRequired} = props
 
     // Toggle the state on button click
     const handleToggle = () => {

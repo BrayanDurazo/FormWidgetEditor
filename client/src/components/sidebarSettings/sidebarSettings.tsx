@@ -175,7 +175,6 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
         <div className="required-settings-container">
           <label>First name required: </label>
           <ToggleButton
-            textValue={"First name"}
             required={formWidget.requiredFirstName}
             setRequired={setFirstNameRequired}>    
           </ToggleButton>
@@ -183,7 +182,6 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
         <div className="required-settings-container">
           <label>Last name required: </label>
           <ToggleButton
-            textValue={"Last name"}
             required={formWidget.requiredLastName}
             setRequired={setLastNameRequired}>
           </ToggleButton>
