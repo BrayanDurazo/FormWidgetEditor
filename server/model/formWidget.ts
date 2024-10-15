@@ -1,5 +1,5 @@
 export interface FormWidgetModel {
-  id: number;
+  id?: number;
   title: {
     textContent: string;
     fontSize: number;

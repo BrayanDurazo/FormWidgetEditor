@@ -1,20 +1,22 @@
 import {Router, Request, Response } from "express";
 import formWidgets from "../data/formWidgetData";
-import { getNewFormWidgetId } from "../controller/formWidgetController";
+import { flattenFormWidget } from "../controller/formWidgetController";
+import {db} from "../app"
 const router = Router();
 
 router.get("/", async (req: Request, res: Response) => {
-    try{
-        const data = await new Promise(resolve => setTimeout(() => resolve(formWidgets), 500));
-        res.status(200).send(data);
-    }catch(error){
-        res.status(500).send({ message: 'Something went wrong' });
-    }
+    db.all('SELECT * FROM FormWidget', (err: { message: any; }, rows: any) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).send('Internal server error');
+        } else {
+            res.send(rows);
+        }
+    });
 });
 
 router.post("/", (req: Request, res: Response) => {
     const newFormWidget = {
-        id: getNewFormWidgetId(),
         title: {
             textContent: req.body.title.textContent,
             fontSize: req.body.title.fontSize,
@@ -34,7 +36,39 @@ router.post("/", (req: Request, res: Response) => {
         requiredFirstName: req.body.requiredFirstName,
         requiredLastName: req.body.requiredLastName,
     }
-    formWidgets.push(newFormWidget)
+    const flatFormWidget = flattenFormWidget(newFormWidget)
+    const sql = `
+    INSERT INTO FormWidget (
+        title_textContent, title_fontSize, title_fontColor, title_alignment,
+        subTitle_textContent, subTitle_fontSize, subTitle_fontColor, subTitle_alignment,
+        submitButton_textContent, submitButton_backgroundColor,
+        requiredFirstName, requiredLastName
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+  
+    const values = [
+        flatFormWidget.title_textContent,
+        flatFormWidget.title_fontSize,
+        flatFormWidget.title_fontColor,
+        flatFormWidget.title_alignment,
+        flatFormWidget.subTitle_textContent,
+        flatFormWidget.subTitle_fontSize,
+        flatFormWidget.subTitle_fontColor,
+        flatFormWidget.subTitle_alignment,
+        flatFormWidget.submitButton_textContent,
+        flatFormWidget.submitButton_backgroundColor,
+        flatFormWidget.requiredFirstName,
+        flatFormWidget.requiredLastName
+    ];
+
+    db.run(sql, values, function(err: { message: any; }) {
+        if (err) {
+            return console.error(err.message);
+        }
+        // @ts-ignore comment
+        console.log(`Row inserted with rowId ${this.lastID}`);
+    });
+
     res.status(201).json(newFormWidget);
     return;
 });
