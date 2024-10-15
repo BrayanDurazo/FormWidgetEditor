@@ -26,8 +26,15 @@
     align-items: center;
 }
 
+.sidebar-settings-save-button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .save-button {
-    background-color: #3180d4;
+    width: 24%;
+    background-color: #007bff;
     color: white;
     padding: 10px 15px;
     border: none;

@@ -146,7 +146,7 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
 
     return (
       <div className="sidebar-container">
-        <div>
+        <div className="title-settings-container">
           <TextInput
             textValue={"Title"}
             textContent={formWidget.title.textContent}
@@ -156,20 +156,38 @@ const SidebarSettings = (props: SidebarSettingsProps) => {
           <TextAlignmentInput textValue={"title"} alignment={formWidget.title.alignment} setAlignment={setTitleAlignment}></TextAlignmentInput>
           <FontColorInput textValue={"title"} fontColor={formWidget.title.fontColor} setFontColor={setTitleFontColor}></FontColorInput>
         </div>
-        <div>
+        <div className="title-settings-container">
           <TextInput
-            textValue={"Sub title"}
+            textValue={"Subtitle"}
             textContent={formWidget.subTitle.textContent}
             setTextContent={setSubTitle}
           />
           <FontSizeInput fontSize={formWidget.subTitle.fontSize} setFontSize={setSubTitleFontSize}/>
-          <TextAlignmentInput textValue={"sub title"} alignment={formWidget.subTitle.alignment} setAlignment={setSubTitleAlignment}></TextAlignmentInput>
-          <FontColorInput textValue={"sub title"} fontColor={formWidget.subTitle.fontColor} setFontColor={setSubTitleFontColor}></FontColorInput>
+          <TextAlignmentInput textValue={"subtitle"} alignment={formWidget.subTitle.alignment} setAlignment={setSubTitleAlignment}></TextAlignmentInput>
+          <FontColorInput textValue={"subtitle"} fontColor={formWidget.subTitle.fontColor} setFontColor={setSubTitleFontColor}></FontColorInput>
         </div>
-
-        <SubmitButtonSettingInput buttonText={formWidget.submitButton.textContent} setButtonTex={setSubmitButtonText} backgroundColor={formWidget.submitButton.backgroundColor} setBackgroundColor={setSubmitButtonBackgroundColor}></SubmitButtonSettingInput>
-        <ToggleButton textValue={"First name"} required={formWidget.requiredFirstName} setRequired={setFirstNameRequired}></ToggleButton>
-        <ToggleButton textValue={"Last name"} required={formWidget.requiredLastName} setRequired={setLastNameRequired}></ToggleButton>
+        <SubmitButtonSettingInput
+          buttonText={formWidget.submitButton.textContent}
+          setButtonTex={setSubmitButtonText}
+          backgroundColor={formWidget.submitButton.backgroundColor}
+          setBackgroundColor={setSubmitButtonBackgroundColor}>
+        </SubmitButtonSettingInput>
+        <div className="required-settings-container">
+          <label>First name required: </label>
+          <ToggleButton
+            textValue={"First name"}
+            required={formWidget.requiredFirstName}
+            setRequired={setFirstNameRequired}>    
+          </ToggleButton>
+        </div>
+        <div className="required-settings-container">
+          <label>Last name required: </label>
+          <ToggleButton
+            textValue={"Last name"}
+            required={formWidget.requiredLastName}
+            setRequired={setLastNameRequired}>
+          </ToggleButton>
+        </div>
       </div>
     )
 }

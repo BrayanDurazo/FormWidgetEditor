@@ -60,7 +60,9 @@ const FormEditor = (props: FormEditorProps) => {
         <div className="form-editor">
             <div className="sidebar-settings">
                 <SidebarSettings formWidget={formWidget} updateFormWidget={setFormWidget}/>
-                <button className={"save-button"} onClick={handleSaveData}> Save </button>
+                <div className="sidebar-settings-save-button">
+                  <button className={"save-button"} onClick={handleSaveData}> Save </button>
+                </div>
             </div>
             <div className="form-preview">
                 <FormPreview

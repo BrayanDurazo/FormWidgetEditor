@@ -15,7 +15,7 @@ const defaultFormWidget: FormWidget = {
       alignment: "center",
     },
     submitButton: {
-      textContent: "Submit",
+      textContent: "",
       backgroundColor: "#000000",
     },
     requiredFirstName: true,

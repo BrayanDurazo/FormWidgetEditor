@@ -9,12 +9,12 @@
 .font-size-input {
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .font-size-input input[type="number"] {
-    margin-left: 10px;
+    margin-left: 4px;
     padding: 5px;
-    width: 40px;
+    width: 20%;
     font-size: 16px;
 }

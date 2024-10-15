@@ -21,22 +21,28 @@ const SubmitButtonSettingInput = (props: submitButtonSettingInputProps) => {
 
   return (
     <div className="submit-button-input-container">
-        <input
-            className="submit-button-text-input"
-            type="text"
-            id="submitButtonText" 
-            value={buttonText}
-            placeholder={"Submit button text"}
-            onChange={(e) => handleTextInput(e)}
-        />
-        <label>Choose a background color: </label>
-        <input 
-            className="submit-button-background-color-input"
-            type="color" 
-            id="submitButtonBackgroundColor" 
-            value={backgroundColor} 
-            onChange={handleColorInput} 
-        />
+        <div className="submit-button-input">
+            <label className="submit-button-label">Submit button text:</label>
+            <input
+                className="submit-button-text-input"
+                type="text"
+                id="submitButtonText" 
+                value={buttonText}
+                placeholder={"Submit"}
+                onChange={(e) => handleTextInput(e)}
+            />
+        </div>
+        <div className="submit-button-input">
+            <label className="submit-button-color-label">Submit button background color:</label>
+            <input
+                className="submit-button-color-input"
+                type="color" 
+                id="submitButtonBackgroundColor" 
+                value={backgroundColor} 
+                onChange={handleColorInput} 
+            />
+        </div>
+
     </div>
   );
 };
