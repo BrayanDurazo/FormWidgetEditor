@@ -5,7 +5,7 @@ import cors from 'cors';
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 
-export const db = new sqlite3.Database('./database/formWidgetDB.db', (err: { message: any; }) => {
+export const db = new sqlite3.Database('./formWidgetDB.db', (err: { message: any; }) => {
   if (err) {
     console.error(err.message);
   }
