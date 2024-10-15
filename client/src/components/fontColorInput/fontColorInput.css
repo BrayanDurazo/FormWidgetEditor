@@ -1,11 +1,11 @@
 /* ColorPickerForm.css */
 
 .font-color-input-container {
+    justify-content: center;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;}
+}
 
 input[type="color"] {
     border: none;
@@ -13,6 +13,6 @@ input[type="color"] {
     height: 40px;
     width: 40px;
     padding: 0;
-    margin-left: 10px;
+    margin-left: 4px;
     border-radius: 14px;
 }

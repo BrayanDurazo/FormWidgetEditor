@@ -23,9 +23,10 @@ const FormPreview = (props: FormPreviewProps) => {
     <>
       <div className="simple-form-container">
         <div className="title-alignment-container">
-          <h1 className="form-title" style={{ fontSize: `${title.fontSize}px`, textAlign:`${title.alignment}`, color:`${title.fontColor}`}}>{title.textContent}</h1>
-          <h1 className="form-subtitle" style={{ fontSize: `${subTitle.fontSize}px`, textAlign:`${subTitle.alignment}`, color:`${subTitle.fontColor}`}}>{subTitle.textContent}</h1>
+          <h1 className="form-title" style={{ fontSize: `${title.fontSize}px`, textAlign:`${title.alignment}`, color:`${title.fontColor}`}}>{title.textContent || "Here goes your title"}</h1>
+          <h1 className="form-subtitle" style={{ fontSize: `${subTitle.fontSize}px`, textAlign:`${subTitle.alignment}`, color:`${subTitle.fontColor}`}}>{subTitle.textContent || "Here goes your subtitle"}</h1>
         </div>
+        <div className="preview-names-field">
           <TextInput
             textValue={"First Name"}
             textContent={firstName}
@@ -39,7 +40,8 @@ const FormPreview = (props: FormPreviewProps) => {
             setTextContent={setLastName}
           />
           <EmailInput email={email} setEmail={setEmail} />
-        <button className="submit-button" style={{backgroundColor:`${submitButton.backgroundColor}`}}>{submitButton.textContent}</button>
+        </div>
+        <button className="submit-button" style={{backgroundColor:`${submitButton.backgroundColor}`}}>{submitButton.textContent || "Alterable Submit"}</button>
       </div>
     </>
   );

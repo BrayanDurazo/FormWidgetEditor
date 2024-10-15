@@ -4,18 +4,18 @@ const defaultFormWidget: FormWidget = {
     id: 0,
     title: {
       textContent: "",
-      fontSize: 18,
+      fontSize: 8,
       fontColor: "#000000",
       alignment: "center",
     },
     subTitle: {
       textContent: "",
-      fontSize: 14,
+      fontSize: 8,
       fontColor: "#000000",
       alignment: "center",
     },
     submitButton: {
-      textContent: "Submit",
+      textContent: "",
       backgroundColor: "#000000",
     },
     requiredFirstName: true,

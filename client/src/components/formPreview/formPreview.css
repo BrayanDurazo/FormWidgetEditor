@@ -37,3 +37,7 @@
     flex-direction: column;
     padding: 20px;
 }
+
+.preview-names-field input{
+    margin-bottom: 15px;
+}
